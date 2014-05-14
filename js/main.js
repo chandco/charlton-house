@@ -91,27 +91,35 @@ jQuery(document).ready(function($){
 
                 var flyout      = s.flyoutMenu;
                 var trigger     = s.flyoutMenu.find('.flyout-trigger');
-
-                trigger.click(function(event) {
+				var flyoutOverlay = $("<div class='flyout-overlay'></div>");
+                
+				trigger.click(function(event) {
                     event.preventDefault();
-					var flyoutOverlay = $("<div class='flyout-overlay'></div>");
-						flyoutOverlay.insertBefore(flyout);
+					
+					
+					flyoutOverlay.insertBefore(flyout);
                     
 					if (flyout.hasClass('open')) {
-						flyoutOverlay.fadeIn();
+						flyoutOverlay.fadeOut( function() {
+							flyoutOverlay.remove();
+						});
 					} else {
-						flyoutOverlay.remove();
+						flyoutOverlay.fadeIn( function() { 
+							
+							flyoutOverlay.on("click",function() {
+								flyoutOverlay.fadeOut( function() {
+									flyoutOverlay.remove();
+									flyout.toggleClass('open');
+								});
+							});
+						
+						});
 					}
 					
 					flyout.toggleClass('open');
                 });
 				
-				$("div.flyout-overlay").on("click",function() {
-					$(this).fadeOut( function() {
-						$(this).remove();
-						flyout.toggleClass('open');
-					});
-				});
+				
 				
 				
             },
