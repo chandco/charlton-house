@@ -94,7 +94,19 @@ jQuery(document).ready(function($){
                 trigger.click(function(event) {
                     event.preventDefault();
                     flyout.toggleClass('open');
+					var flyoutOverlay = $("<div class='flyout-overlay'></div>");
+					flyoutOverlay.insertBefore(s.flyoutMenu);
+					flyoutOverlay.fadeIn();
+					
+					
+					
                 });
+				
+				flyoutOverlay.click(function(event) {
+					flyoutOverlay.fadeOut( function() {
+						flyoutOverlay.remove();
+					});
+				});
 
             },
 

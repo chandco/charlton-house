@@ -7,7 +7,7 @@ if (is_front_page()) {
     $attachments = get_attachments_by_media_tags($args);
 
     foreach($attachments as $attachment) {
-        $sliderImages[] = array('url' => $attachment->guid, 'text' => '<h1>' . $attachment->post_excerpt . '</h1>');
+        $sliderImages[] = array('url' => $attachment->guid, 'text' => '<h2>' . $attachment->post_excerpt . '</h2>');
     }
 
 } else if (is_category()) {    
