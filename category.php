@@ -27,7 +27,7 @@ $currentCat = get_category($cat);
 
                 		if (!empty($catImgUrl)) {
                 		?>
-                			<span><img src="<?= $catImgUrl ?>" alt="" /></span>
+                			<span class='cat-id-img' style="background-image:url(<?= $catImgUrl ?>);"></span>
                 		<?php } ?>
                 		<?= single_cat_title( '', false ) ?></h1>
                 <?php } ?>

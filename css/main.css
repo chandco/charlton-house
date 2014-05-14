@@ -6632,6 +6632,10 @@ header .navbar-toggle {
 .blog-summary-link {
   display: block;
   position: relative;
+  height: 0;
+  padding-bottom: 61.25%;
+  background: #C9C9C9;
+  overflow: hidden;
 }
 .custom-image-link img,
 .crs-image-link img,
@@ -6727,8 +6731,8 @@ header .navbar-toggle {
   color: #ffffff;
 }
 .newsslider .slides li a .overlay h3 {
-  font-size: 22px;
-  line-height: 28px;
+  font-size: 16px;
+  line-height: 24px;
   font-family: 'avenir-black', Arial, Helvetica, sans-serif;
   margin: 0 0 5px 0;
   text-transform: uppercase;
@@ -6738,6 +6742,9 @@ header .navbar-toggle {
   font-size: 14px;
   display: block;
   text-transform: uppercase;
+  position: absolute;
+  top: 44%;
+  left: 5%;
 }
 .newsslider .slides li a:hover img {
   opacity: 0.5;
@@ -6856,6 +6863,9 @@ body.archive.author div.slider li {
   height: 53px;
   margin-top: -26px;
   padding: 5px;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center center;
 }
 .blog-index .blog-index-summary h1 span img,
 .author-index .blog-index-summary h1 span img,
@@ -7029,7 +7039,7 @@ body.archive.author div.slider li {
   font-family: 'avenir-black', Arial, Helvetica, sans-serif;
 }
 .entry h2 {
-  font-size: 40px;
+  font-size: 35px;
 }
 .entry h3 {
   font-size: 30px;
@@ -7108,11 +7118,17 @@ body.archive.author div.slider li {
 .entry .single-gallery-slider .singleslider {
   text-align: center;
 }
-.entry .single-gallery-slider .singleslider img {
+.entry .single-gallery-slider .singleslider span {
+  display: block;
   border: 10px solid #EAE8E9;
   max-width: 100%;
-  height: auto;
+  height: 0;
+  padding-bottom: 56.25%;
   margin-bottom: 20px;
+}
+.entry .single-gallery-slider .singleslider span overflow:hiddenl img {
+  width: 100%;
+  height: auto;
 }
 .entry .single-gallery-slider .singleslider .caption {
   margin-bottom: 18px;
@@ -7144,7 +7160,7 @@ body.archive.author div.slider li {
 }
 .author-box ul li a {
   color: #635f60;
-  line-height: 16px;
+  line-height: 35px;
   display: block;
 }
 .author-box ul li a:hover {
@@ -7166,8 +7182,18 @@ body.archive.author div.slider li {
   line-height: 16px;
   margin: 10px 0 0 0;
 }
-.author-box .cat-list img {
-  width: 35px;
+.author-box .cat-list span.cat-li-img {
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  display: block;
+  float: left;
+  clear: left;
+  margin: 0 5px 5px 0;
+  background-color: #c41230;
+  background-size: auto 60%;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 .author-box img {
   max-width: 100%;
@@ -7899,3 +7925,4 @@ article.entry blockquote figure.wp-caption figcaption {
 .modal-footer {
   *zoom: 1;
 }
+/*# sourceMappingURL=main.css.map */

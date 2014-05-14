@@ -46,7 +46,7 @@ get_header(); ?>
 	                            		$img_src = wp_get_attachment_image_src( $image->ID, 'large');
 	                            		?>
 		                                <li>
-		                                    <img src="<?= $img_src[0] ?>" alt="" />
+		                                    <span><img src="<?= $img_src[0] ?>" alt="" /></span>
 		                                    <?php if ($image->post_excerpt) { ?>
 		                                    	<p class="caption"><?= $image->post_excerpt ?></p>
 		                                    <?php } ?>
@@ -110,7 +110,7 @@ get_header(); ?>
                             		?>
                             		<li>
                             			<a href="<?= $cat['url'] ?>">
-                            				<img src="<?= $cat['img'] ?>" alt="" class="tag" /> <?= $cat['title'] ?>
+                            				<span class="cat-li-img" style="background-image:url(<?= $cat['img'] ?>);"></span> <?= $cat['title'] ?>
                             			</a>
                             		</li>
                             		<?php
