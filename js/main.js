@@ -86,6 +86,7 @@ jQuery(document).ready(function($){
 
             },
 
+
             flyoutmenu:function() {
 
                 var flyout      = s.flyoutMenu;
@@ -93,28 +94,24 @@ jQuery(document).ready(function($){
 
                 trigger.click(function(event) {
                     event.preventDefault();
-                    flyout.toggleClass('open');
-					
+					var flyoutOverlay = $("<div class='flyout-overlay'></div>");
+						flyoutOverlay.insertBefore(flyout);
+                    
 					if (flyout.hasClass('open')) {
-						var flyoutOverlay = $("<div class='flyout-overlay'></div>");
-						flyoutOverlay.insertBefore(s.flyoutMenu);
 						flyoutOverlay.fadeIn();
 					} else {
-						flyoutOverlay.fadeOut( function() {
-							flyoutOverlay.remove();
-						});
+						flyoutOverlay.remove();
 					}
 					
-					$("div.flyout-overlay").on("click",function() {
-						$(this).fadeOut( function() {
-							$(this).remove();
-							flyout.toggleClass('open');
-						});
-					});
-
-					
-					
+					flyout.toggleClass('open');
                 });
+				
+				$("div.flyout-overlay").on("click",function() {
+					$(this).fadeOut( function() {
+						$(this).remove();
+						flyout.toggleClass('open');
+					});
+				});
 				
 				
             },
