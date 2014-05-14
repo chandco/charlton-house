@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <?php
-                $posts = get_posts('posts_per_page=3&cat=' . $content_ids['cat_fresh_ideas']);
+                $posts = get_posts('posts_per_page=3');
                 foreach($posts as $i => $post) {
                     setup_postdata($post);
 
