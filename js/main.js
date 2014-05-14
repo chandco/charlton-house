@@ -97,17 +97,17 @@ jQuery(document).ready(function($){
 					var flyoutOverlay = $("<div class='flyout-overlay'></div>");
 					flyoutOverlay.insertBefore(s.flyoutMenu);
 					flyoutOverlay.fadeIn();
-					
+					flyoutOverlay.on("click",function(event) {
+					flyoutOverlay.fadeOut( function() {
+						flyoutOverlay.remove();
+						});
+					});
+
 					
 					
                 });
 				
-				flyoutOverlay.click(function(event) {
-					flyoutOverlay.fadeOut( function() {
-						flyoutOverlay.remove();
-					});
-				});
-
+				
             },
 
             slideshow: function() {
