@@ -14,15 +14,17 @@
         <ul class="slides">
             <?php
 $args = array(
-				'posts_per_page' => 2,
+				'posts_per_page' => 3,
 				'tax_query' => array(
+								'relation' => 'and',
+								array (
 									'taxonomy' => 'homepage-section',
 									'field' => 'id',
-									'terms' => $cat_ID
+									'terms' => array($cat_ID)
+									)
 									)
 								
 				);
-				print_r($args);
                 $posts = get_posts($args);
 				
 				
