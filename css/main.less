@@ -26,6 +26,23 @@
   height: @height;
 }
 
+.fap() {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* colours */
+@red : #c41230;
+@grey : #AFA5A6;
+@darkgrey : #655F61;
+@lightgrey : #e2e0d1;
+
+
 
 .border-radius(@radius: 5px) {
   -webkit-border-radius: @radius;
@@ -1022,6 +1039,18 @@ header {
 }
 
 // blog & author index
+
+// fix for header
+body.archive.author {
+	div.slider {
+		background: #eeeeee;
+		li {
+			background-size: auto 100%;
+		}
+	}
+}
+
+
 .blog-index, .author-index {
   margin: 50px 0 50px 0;
   .blog-index-summary, .author-index-summary {
@@ -1085,6 +1114,8 @@ header {
        }
 
      }
+	 
+	 
 
     // media queries
     @media (max-width: @screen-sm) {
@@ -1720,6 +1751,160 @@ html[xmlns] .slides {display: block;}
 @media (max-width: (@screen-md+30)) {
   .fullscreenslider .flex-direction-nav { display: none;}
 }
+
+table.how-were-different {
+	@size: 10%;
+	font-size:1.2em;
+	width:100%;
+	position:relative;
+	tr {
+		position:relative;
+		td:first-child 
+		{
+			width: @size * 2;
+			text-align: center;
+			
+		}
+		td {
+			border:1px solid @grey;
+			padding:1% 2%;
+			font-family: 'avenir', Arial, Helvetica, sans-serif;
+			vertical-align:middle;
+			width:100%;
+			a {
+				color:@darkgrey;
+				font-weight:normal;
+				position:relative;
+				display:block;
+				width:100%;
+
+				&:after {
+					position:absolute;
+					right:0;
+					.fap();
+					content: "\f144";
+					font-size:larger;
+				}
+				
+				&:hover {
+					color:@red;
+				}
+					
+				
+			}
+			
+			
+			
+	
+
+			
+		}
+		
+		@media screen and (max-width: 480px) {
+				display:block;
+				width:100%;
+				td:nth-child(odd) {
+					
+					position:absolute;
+					top:10px;
+					border:none;
+					width:100%;
+					
+				}
+				
+				td:nth-child(even) {
+					width:100%;
+					display:block;
+					border-bottom:none;
+					text-align:center;
+					position:relative;
+					padding:60px 2% 2% 2%;
+					a {
+						&:after {
+							display:none;
+							
+						}
+					}
+					
+				}
+				
+				&:nth-last-child(1) {
+					border-bottom: 1px solid @grey;
+				}
+		}
+		
+				
+	}
+		
+}
+
+
+.slider .slides-content h2 {
+	font-size: 44px;
+  line-height: 48px;
+	.avBlack();
+  color: #ffffff;
+  display: block;
+  margin: 0 auto;
+  max-width: 500px;
+  margin: 90px auto 32px auto;
+  text-shadow: 0 0 25px RGBA(0,0,0,0.5);
+}
+
+.fullscreenslider .flex-direction-nav a {
+	width: 70px;
+	height: 90px;
+	background-size: auto 80%;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+article.entry {
+	h3 {
+		color:@red;
+		font-size:22px;
+	}
+	blockquote {
+		border-top: 2px solid @lightgrey;
+		border-bottom: 2px solid @lightgrey;
+		padding:10px 0 20px 0;
+		margin: 20px 0;
+		figure.wp-caption {
+			float:left;
+			max-width: 30%;
+			margin: 0 20px 20px 0;
+			
+			img {
+				max-width:100%;
+				height:auto;
+				
+			}
+		figcaption {
+			font-size:12px;
+			.avRoman();
+			}
+		}
+	}
+}
+
+
+.ch-icon {
+	@size: 35px;
+	display:inline-block;
+	width:@size;
+	height:@size;
+	background-size:100% auto;
+	background-position:center center;
+	background-repeat:no-repeat;	
+}
+
+.ch-icon-cake { background-image: url(../img/cake.png); }
+.ch-icon-chefhat { background-image: url(../img/chefhat.png); }
+.ch-icon-heart { background-image: url(../img/heart.png); }
+.ch-icon-iip { background-image: url(../img/iip.png); }
+.ch-icon-startick { background-image: url(../img/startick.png); }
+.ch-icon-trolley { background-image: url(../img/trolley.png); }
+
 
 /* HELPER CLASSES
 ------------ */

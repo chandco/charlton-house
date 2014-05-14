@@ -7,10 +7,10 @@
 
 // Set content IDs to be used throughout Theme
 $default_content_ids = array(
-                        'cat_fresh_ideas' => 4,
-                        'cat_news' => 2,
-                        'cat_csr' => 3,
-                        'page_about_us' => 12);
+                        'cat_fresh_ideas' => 3,
+                        'cat_news' => 1,
+                        'cat_csr' => 7,
+                        'page_about_us' => 2);
 global $content_ids;
 $content_ids = apply_filters('set_content_ids', $default_content_ids);
 
@@ -31,7 +31,7 @@ $content_ids = apply_filters('set_content_ids', $default_content_ids);
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/normalize.css" />
 
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/compiled.css?v=<?= time() ?>" />
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/main.css" />
 
     <!--[if lt IE 9]>
     <script src="js/vendor/respond.min.js"></script>
