@@ -1,9 +1,9 @@
 <?php
-    $category = get_category($cat_ID);
+    $category = get_term($cat_ID, 'homepage-section');
     $catTitle = $category->name;
-    $alternateTitle = get_field('alternate_title', 'category_' . $cat_ID);
-    if (!empty($alternateTitle))
-        $catTitle = $alternateTitle;
+   $alternateTitle = get_field('alternate_title', 'homepage-section_' . $cat_ID);
+   if (!empty($alternateTitle))
+    $catTitle = $alternateTitle;
 ?>
 
 <div class="csr-posts-slider home-section" id="<?= $category->slug ?>">
@@ -13,8 +13,20 @@
     <div class="flexslider csrslider">
         <ul class="slides">
             <?php
-            $posts = get_posts('posts_per_page&cat=' . $cat_ID);
-            foreach($posts as $i => $post) {
+$args = array(
+				'posts_per_page' => 2,
+				'tax_query' => array(
+									'taxonomy' => 'homepage-section',
+									'field' => 'id',
+									'terms' => $cat_ID
+									)
+								
+				);
+				print_r($args);
+                $posts = get_posts($args);
+				
+				
+				            foreach($posts as $i => $post) {
                 setup_postdata($post);
                 $thumbURL = $url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail' );
                 ?>

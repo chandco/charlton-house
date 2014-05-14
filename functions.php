@@ -621,3 +621,22 @@ function my_custom_login_logo() {
 function add_possession($string) {
 	return $string . '\'' . (substr($string, -1) != 's' ? 's' : '');
 }
+
+
+// Taxonomy for curating homepage
+
+function add_custom_taxonomies() {
+	// Add new "Locations" taxonomy to Posts
+	register_taxonomy('homepage-section', 'post', array(
+		// Hierarchical taxonomy (like categories)
+		'hierarchical' => false,
+		// This array of options controls the labels displayed in the WordPress Admin UI
+		'labels' => array(
+			'name' => _x( 'Sections on Homepage', 'taxonomy general name' ),
+			'singular_name' => _x( 'Homepage Section', 'taxonomy singular name' ),
+			'menu_name' => __( 'Homepage sections' ),
+			'has_archive' => false,
+		)
+	));
+}
+add_action( 'init', 'add_custom_taxonomies', 0 );

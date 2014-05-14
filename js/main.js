@@ -91,7 +91,7 @@ jQuery(document).ready(function($){
 
                 var flyout      = s.flyoutMenu;
                 var trigger     = s.flyoutMenu.find('.flyout-trigger');
-				var flyoutOverlay = $("<div class='flyout-overlay'></div>");
+				var flyoutOverlay = $("<div class='flyout-overlay'>&nbsp;</div>");
                 
 				trigger.click(function(event) {
                     event.preventDefault();
