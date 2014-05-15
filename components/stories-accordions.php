@@ -47,7 +47,7 @@
 										foreach($categories as $c) {
 											if ($count < 2) {
 											$cat = get_category( $c );
-											echo $cat->slug;
+											echo $cat->name;
 											$count++;
 											
 												if ($count <= 1)
