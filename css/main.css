@@ -7125,8 +7125,9 @@ body.archive.author div.slider li {
   height: 0;
   padding-bottom: 56.25%;
   margin-bottom: 20px;
+  overflow: hidden;
 }
-.entry .single-gallery-slider .singleslider span overflow:hiddenl img {
+.entry .single-gallery-slider .singleslider span img {
   width: 100%;
   height: auto;
 }
@@ -7753,7 +7754,8 @@ table.how-were-different tr td a:hover {
     border-bottom: 1px solid #afa5a6;
   }
 }
-.slider .slides-content h2 {
+.slider .slides-content h2,
+.slider .slides-content h1.category-slide-title {
   font-size: 44px;
   line-height: 48px;
   font-family: 'avenir-black', Arial, Helvetica, sans-serif;
@@ -7925,4 +7927,3 @@ article.entry blockquote figure.wp-caption figcaption {
 .modal-footer {
   *zoom: 1;
 }
-/*# sourceMappingURL=main.css.map */
