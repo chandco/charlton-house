@@ -34,7 +34,36 @@
                                     <?php the_excerpt() ?>
                                 </div>
                                 <div class="story-bottom">
-                                    <p class="link-title"><?= get_field('cta_title') ?> <span class="fa fa-play-circle fa-2x"></span></p>
+                                    <p class="link-title"><?php 
+									
+									$ctaTitle = get_field('cta_title');
+									if ($ctaTitle)
+									{
+										echo $ctaTitle;
+									} else {
+										// no CTA title so let's get a category
+										$categories = wp_get_post_categories(get_the_ID());
+										$count = 0;
+										foreach($categories as $c) {
+											if ($count < 2) {
+											$cat = get_category( $c );
+											echo $cat->slug;
+											$count++;
+											
+												if ($count <= 1)
+												{
+													echo ", ";
+												}
+											
+											}
+										}
+									}
+									
+									
+									
+									
+									
+									?> <span class="fa fa-play-circle fa-2x"></span></p>
                                 </div>
                             </a>
                         </div>
