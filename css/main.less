@@ -1,5 +1,5 @@
 @import "bootstrap/bootstrap.less";
-
+@import "flex";
 @import "fonts.less";
 
 /* VARIABLES
@@ -1618,7 +1618,8 @@ footer {
 /* FlexSlider Necessary Styles
 *********************************/
 .flexslider {margin: 0; padding: 0;}
-.flexslider .slides > li {display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
+.flexslider .slides { height:100%; }
+.flexslider .slides > li { height:100%; display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
 .flexslider .slides > li img {width: 100%; display: block;}
 .flex-pauseplay span {text-transform: capitalize;}
 
@@ -1912,6 +1913,7 @@ table.how-were-different {
 }
 
 
+
 .slider .slides-content h2, .slider .slides-content h1.category-slide-title {
 	font-size: 44px;
   line-height: 48px;
@@ -1922,7 +1924,34 @@ table.how-were-different {
   max-width: 500px;
   margin: 90px auto 32px auto;
   text-shadow: 0 0 25px RGBA(0,0,0,0.5);
+	  @media (max-width: 768px) {
+			
+			font-size:32px;  
+		  margin: 10px;
+	  }
 }
+
+ul.slides li {
+	height:100%;
+	.container {
+		height:100%;
+		
+		div.slides-content {
+		height:100%;
+		.display(flex);
+		.justify-content(center);
+		h2, h1 {
+			.display(flex);
+			.align-items(center);
+			
+			margin:0 !important;
+		}
+		
+		}
+	}
+}
+
+
 
 .fullscreenslider .flex-direction-nav a {
 	width: 70px;

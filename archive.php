@@ -1,31 +1,23 @@
 <?php
 /**
- * The template for displaying Archive pages
- *
- * Used to display archive-type pages if nothing more specific matches a query.
- * For example, puts together date-based pages if no date.php file exists.
- *
- * If you'd like to further customize these archive views, you may create a
- * new template file for each specific one. For example, Twenty Fourteen
- * already has tag.php for Tag archives, category.php for Category archives,
- * and author.php for Author archives.
- *
- * @link http://codex.wordpress.org/Template_Hierarchy
- *
- * @package WordPress
- * @subpackage Twenty_Fourteen
- * @since Twenty Fourteen 1.0
+ * The template for displaying Category pages
  */
 
-get_header(); ?>
+get_header(); 
 
-	<section id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
+$currentCat = get_category($cat);
+?>
 
-			<?php if ( have_posts() ) : ?>
+	<?php include("components/fullscreen-slider.php"); ?>
 
-			<header class="page-header">
-				<h1 class="page-title">
+
+    <div class="blog-index">
+
+        <div class="container">
+
+            <div class="blog-index-summary">
+                <?php if ($currentCat->parent !== 0) { ?>
+                	<h1 class="page-title">
 					<?php
 						if ( is_day() ) :
 							printf( __( 'Daily Archives: %s', 'twentyfourteen' ), get_the_date() );
@@ -42,33 +34,73 @@ get_header(); ?>
 						endif;
 					?>
 				</h1>
-			</header><!-- .page-header -->
+                <?php } ?>
+                <?= category_description(); ?>
+            </div>
 
-			<?php
-					// Start the Loop.
-					while ( have_posts() ) : the_post();
+            <section class="blog-index-posts">
 
-						/*
-						 * Include the post format-specific template for the content. If you want to
-						 * use this in a child theme, then include a file called called content-___.php
-						 * (where ___ is the post format) and that will be used instead.
-						 */
-						get_template_part( 'content', get_post_format() );
 
-					endwhile;
-					// Previous/next page navigation.
-					twentyfourteen_paging_nav();
+            	<?php if ( have_posts() ) :
+						while ( have_posts() ) : the_post();
+							$thumbURL = $url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' );
+							?>
+							<article class="summary">
+			                    <div class="row">
+			                        <div class="col-sm-6">
 
-				else :
-					// If no content, include the "No posts found" template.
-					get_template_part( 'content', 'none' );
+			                            <a class="blog-summary-link" href="<?php the_permalink() ?>">
+			                                <img src="<?= $thumbURL[0] ?>" alt="" />
+			                                <div class="overlay"><span class="read-more">Read More</span></div>
+			                            </a>
 
-				endif;
-			?>
-		</div><!-- #content -->
-	</section><!-- #primary -->
+			                        </div>
+			                        <div class="col-sm-6">
+
+			                            <div class="excerpt-wrapper">
+			                                <div class="excerpt-cell">
+			                                    <div class="blog-summary-excerpt">
+			                                        <h2 class="post-title"><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
+			                                        <span class="date"><?php echo get_the_date( 'j F Y' ); ?></span>
+			                                        <?php the_excerpt() ?>
+			                                    </div>
+			                                </div>
+			                            </div>
+
+			                        </div>
+			                    </div>
+			                </article><!-- end summary -->
+							<?php
+
+						endwhile;
+
+					else :
+					echo "meep";
+						// If no content, include the "No posts found" template.
+						get_template_part( 'content', 'none' );
+
+					endif;
+				?> 
+
+            </section><!-- end blog-index-posts -->
+
+            <?php 
+            global $wp_query;
+            $current_page = get_query_var( 'paged' ) ? intval( get_query_var( 'paged' ) ) : 1;
+            $num_pages = $wp_query->max_num_pages;
+			
+			
+
+            ?>
+            <ul class="paginate">
+                <li><?= get_previous_posts_link('Previous') ?></li>
+                <li class="page-num"><span>Page <?= $current_page ?> of <?= $num_pages ?></span></li>
+                <li><?= get_next_posts_link('Next') ?></li>
+            </ul>
+
+        </div>
+
+    </div><!-- end blog-index -->
 
 <?php
-get_sidebar( 'content' );
-get_sidebar();
 get_footer();
