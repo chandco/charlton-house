@@ -1,5 +1,5 @@
 <div class="flyout-menu clearfix">
-    <a class="flyout-trigger ir" href="#">How can we help?</a>
+    <a class="flyout-trigger ir" href="#">CH&amp;Co Group Services</a>
     <div class="flyout-contents">
         <h5>Charlton House is part of the CH&amp;Co Group</h5>
         <div class="flyout-links-wrapper clearfix">
