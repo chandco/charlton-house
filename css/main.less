@@ -1747,6 +1747,19 @@ html[xmlns] .slides {display: block;}
 .flexslider:hover .flex-next { opacity: 1.0; }
 .flex-direction-nav .flex-disabled { opacity: 0; cursor: default; }
 
+/* fix for flicker on homepage */
+.flexslider.csrslider:before {
+	content:"";
+	display:block;
+	position:absolute;
+	top:-50px;
+	width:100px;
+	height:50px;
+    right:0;
+	z-index:1;
+
+}
+
 
 /* Pause/Play */
 .flex-pauseplay a { display: block; width: 20px; height: 20px; position: absolute; bottom: 5px; left: 10px; opacity: 0.8; z-index: 10; overflow: hidden; cursor: pointer; color: #000; }

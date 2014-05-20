@@ -7592,6 +7592,17 @@ html[xmlns] .slides {
   opacity: 0;
   cursor: default;
 }
+/* fix for flicker on homepage */
+.flexslider.csrslider:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -50px;
+  width: 100px;
+  height: 50px;
+  right: 0;
+  z-index: 1;
+}
 /* Pause/Play */
 .flex-pauseplay a {
   display: block;
