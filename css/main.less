@@ -583,21 +583,38 @@ header {
         text-transform: uppercase;
       }
     }
-    .link-title {
-      display: block;
-      text-transform: uppercase;
-      .avBlack();
-      padding: 0 20px;
-      line-height: 44px;
-      //background-image: url("@{img}/story-white-arrow.png");
-      background-repeat: no-repeat;
-      background-position: right center;
-      margin-bottom: 0;
-      span {
-        float: right;
-        line-height: 44px;
-      }
-    }
+		
+		
+	.story-bottom {	
+		
+		  text-transform: uppercase;
+		  .avBlack();
+		  padding: 10px 10px;
+		  height:64px;
+		  overflow:hidden;
+		  //background-image: url("@{img}/story-white-arrow.png");
+		  background-repeat: no-repeat;
+		  background-position: right center;
+		  margin-bottom: 0;
+		  width:100%;
+		.link-title {
+		  
+		  vertical-align:middle;
+		  width:100%;
+		  height:80%;
+		  padding:0% 9% 5% 2%;
+
+		  position:relative;
+		  span {
+			position:absolute;
+			display:block;
+			right:0;
+			top:0;
+			line-height: 50px;
+			text-align:right;
+		  }
+   		}
+	}
     .story-content {
       max-height: 0;
       overflow: hidden;
@@ -632,7 +649,7 @@ header {
           border-right: 3px solid @border-red;
         }
       }
-      .link-title {
+      .story-bottom {
         background-color: @logo-red;
         color: @white;
 
@@ -655,7 +672,7 @@ header {
           border-right: 3px solid #655F61;
         }
       }
-      .link-title {
+      .story-bottom {
         background-color: #AFA5A6;
         color: @white;
       }
