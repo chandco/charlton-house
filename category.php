@@ -19,6 +19,7 @@ $currentCat = get_category($cat);
                 <?php if ($currentCat->parent !== 0) { ?>
                 	<h1>
                 		<?php
+                		/*
                 		if (get_field('icon', 'category_' . $cat)) {
 	                        $catImg = get_field('icon', 'category_' . $cat);
 	                        $catImgUrl = $catImg['url'];
@@ -28,7 +29,8 @@ $currentCat = get_category($cat);
                 		if (!empty($catImgUrl)) {
                 		?>
                 			<span class='cat-id-img' style="background-image:url(<?= $catImgUrl ?>);"></span>
-                		<?php } ?>
+                		<?php } */
+                		?>
                 		<?= single_cat_title( '', false ) ?></h1>
                 <?php } ?>
                 <?= category_description(); ?>
