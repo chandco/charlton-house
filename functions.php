@@ -651,7 +651,7 @@ function cng_author_base() {
 }
 
 add_rewrite_tag('%person%','([^&]+)');
-add_rewrite_rule('^our-people/([^/]*)/?','index.php?page_id=369&person=$matches[1]','top');
+add_rewrite_rule('^our-people/([^/]*)/?','index.php?page_id=381&person=$matches[1]','top');
 
 function ch_author_permalink($author_permalink) {
 
