@@ -13,7 +13,7 @@ if (is_front_page()) {
 } else if ($single_user_slider) {
      if (get_cupp_meta($single_user_slider, 'original')) {
         $url = get_cupp_meta($single_user_slider, 'original');
-        $sliderImages[] = array('url' => $url, 'text' => '<h2>Our People<br />' . $userdata->first_name . ' ' . $userdata->last_name . '</h2>');
+        $sliderImages[] = array('url' => $url, 'text' => '');
     } else {
         // we're in a page, so get the page feat image
         $url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'original' );

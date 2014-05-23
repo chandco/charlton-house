@@ -646,10 +646,53 @@ function cng_author_base() {
     global $wp_rewrite;
     $author_slug = 'our-people'; // change slug name
     $wp_rewrite->author_base = $author_slug;
+    $wp_rewrite->author_structure = '/' . $wp_rewrite->author_base . '/%author%';
+    // THIS EFFECTIVELY NULLIFIES THE author.php FILE!
 }
 
 add_rewrite_tag('%person%','([^&]+)');
-add_rewrite_rule('^our-people/([^/]*)/?','index.php?page_id=381&person=$matches[1]','top');
+add_rewrite_rule('^our-people/([^/]*)/?','index.php?page_id=369&person=$matches[1]','top');
 
+function ch_author_permalink($author_permalink) {
+
+
+
+}
 
 //flush_rewrite_rules( true );
+
+
+// Custom fields for author
+add_action( 'show_user_profile', 'my_show_extra_profile_fields' );
+add_action( 'edit_user_profile', 'my_show_extra_profile_fields' );
+
+
+function my_show_extra_profile_fields( $user ) { ?>
+
+	<h3>Extra profile information</h3>
+
+	<table class="form-table">
+
+		<tr>
+			<th><label for="job-title">Job title</label></th>
+
+			<td>
+				<input type="text" name="job-title" id="job-title" value="<?php echo esc_attr( get_the_author_meta( 'job-title', $user->ID ) ); ?>" class="regular-text" /><br />
+				<span class="description">Please enter your Job Title</span>
+			</td>
+		</tr>
+
+	</table>
+<?php }
+
+add_action( 'personal_options_update', 'my_save_extra_profile_fields' );
+add_action( 'edit_user_profile_update', 'my_save_extra_profile_fields' );
+
+function my_save_extra_profile_fields( $user_id ) {
+
+	if ( !current_user_can( 'edit_user', $user_id ) )
+		return false;
+
+	/* Copy and paste this line for additional fields. Make sure to change 'twitter' to the field ID. */
+	update_user_meta( $user_id, 'job-title', $_POST['job-title'] );
+}
