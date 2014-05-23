@@ -696,3 +696,10 @@ function my_save_extra_profile_fields( $user_id ) {
 	/* Copy and paste this line for additional fields. Make sure to change 'twitter' to the field ID. */
 	update_user_meta( $user_id, 'job-title', $_POST['job-title'] );
 }
+
+// stay out of my HTML
+ function mod_mce($initArray) {
+       $initArray['verify_html'] = false;
+       return $initArray;
+}
+add_filter('tiny_mce_before_init', 'mod_mce');
