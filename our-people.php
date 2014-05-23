@@ -33,7 +33,7 @@ if ($user): // we have a user in the URI, so let's get their information.  Other
 
                 <?php 
                 if ( get_the_author_meta( 'description', $uid ) ) {
-                	echo get_the_author_meta( 'description', $uid );
+                	echo nl2br( get_the_author_meta( 'description', $uid ) );
                 } 
                 ?>
             </div>
