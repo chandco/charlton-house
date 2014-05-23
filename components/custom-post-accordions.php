@@ -8,7 +8,7 @@
 
             <div class="panel-group" id="accordion">   
                 <?php
-                $pages = get_pages('parent=' . $content_ids['page_about_us']);
+                $pages = get_pages('sort_column=menu_order&parent=' . $content_ids['page_about_us']);
                 foreach($pages as $i => $post) {
                     setup_postdata($post);
                     ?>

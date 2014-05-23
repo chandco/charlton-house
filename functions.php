@@ -640,3 +640,16 @@ function add_custom_taxonomies() {
 	));
 }
 add_action( 'init', 'add_custom_taxonomies', 0 );
+
+add_action('init', 'cng_author_base');
+function cng_author_base() {
+    global $wp_rewrite;
+    $author_slug = 'our-people'; // change slug name
+    $wp_rewrite->author_base = $author_slug;
+}
+
+add_rewrite_tag('%person%','([^&]+)');
+add_rewrite_rule('^our-people/([^/]*)/?','index.php?page_id=369&person=$matches[1]','top');
+
+
+//flush_rewrite_rules( true );

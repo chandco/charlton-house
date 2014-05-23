@@ -10,6 +10,17 @@ if (is_front_page()) {
         $sliderImages[] = array('url' => $attachment->guid, 'text' => '<h2>' . $attachment->post_excerpt . '</h2>');
     }
 
+} else if ($single_user_slider) {
+     if (get_cupp_meta($single_user_slider, 'original')) {
+        $url = get_cupp_meta($single_user_slider, 'original');
+        $sliderImages[] = array('url' => $url, 'text' => '<h2>Our People<br />' . $userdata->first_name . ' ' . $userdata->last_name . '</h2>');
+    } else {
+        // we're in a page, so get the page feat image
+        $url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'original' );
+        $sliderImages[] = array('url' => $url[0], 'text' => '<h1 class="category-slide-title">' . get_the_title() . '</h1>');
+    }
+
+
 } else if (is_category()) {    
     $catID = $cat;
     $catInfo = $currentCat;
