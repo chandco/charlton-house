@@ -13,7 +13,7 @@
     <div class="flexslider newsslider">
         <ul class="slides">
             <?php
-            $posts = get_posts('posts_per_page&cat=' . $cat_ID);
+            $posts = get_posts('posts_per_page=-1&cat=' . $cat_ID);
             foreach($posts as $i => $post) {
                 setup_postdata($post);
                 $thumbURL = $url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail' );
