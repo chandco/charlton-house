@@ -77,16 +77,9 @@ if ($user): // we have a user in the URI, so let's get their information.  Other
 
 						endwhile;
 
-						
+						?>
             
-			            $current_page = get_query_var( 'paged' ) ? intval( get_query_var( 'paged' ) ) : 1;
-			            $num_pages = $wp_query->max_num_pages;
-			            ?>
-			            <ul class="paginate">
-			                <li><?= get_previous_posts_link('Previous') ?></li>
-			                <li class="page-num"><span>Page <?= $current_page ?> of <?= $num_pages ?></span></li>
-			                <li><?= get_next_posts_link('Next') ?></li>
-			            </ul>
+			            
 
 						<?php
 
