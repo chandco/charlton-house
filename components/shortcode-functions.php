@@ -73,8 +73,8 @@ function display_clients($atts) {
 	$clients = get_terms( 'clients', $args );
 
 	$output =  "<ul>";
-     foreach ( $terms as $term ) {
-       $output .= "<li>" . $term->name . "</li>";
+     foreach ( $clients as $client ) {
+       $output .= "<li>" . $client->name . "</li>";
         
      }
      $output .=  "</ul>";
