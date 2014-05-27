@@ -109,7 +109,7 @@ if ($user): // we have a user in the URI, so let's get their information.  Other
 
 	<div class="author-index">
         <div class="container">
-            <div class="author-index-summary">
+            
             	<?php /*Show the page content */ 
             	// you should ideally be using shortcodes here
             	while ( have_posts() ) : the_post(); the_content(); endwhile; 
@@ -121,7 +121,7 @@ if ($user): // we have a user in the URI, so let's get their information.  Other
 
 
 
-            </div>
+            
         </div>
     </div>
 
