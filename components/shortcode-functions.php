@@ -77,7 +77,7 @@ function display_clients($atts) {
        $output .= "<li>" . $term->name . "</li>";
         
      }
-     output .=  "</ul>";
+     $output .=  "</ul>";
 }
 add_shortcode("display_clients", "display_clients");
 
