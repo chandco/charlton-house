@@ -11,12 +11,12 @@ if (is_front_page()) {
     }
 
 } else if ($single_user_slider) {
-     if (get_cupp_meta($single_user_slider, 'original')) {
-        $url = get_cupp_meta($single_user_slider, 'original');
+     if (get_cupp_meta($single_user_slider, 'large_image')) {
+        $url = get_cupp_meta($single_user_slider, 'large_image');
         $sliderImages[] = array('url' => $url, 'text' => '');
     } else {
         // we're in a page, so get the page feat image
-        $url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'original' );
+        $url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large_image' );
         $sliderImages[] = array('url' => $url[0], 'text' => '<h1 class="category-slide-title">' . get_the_title() . '</h1>');
     }
 
@@ -40,7 +40,7 @@ if (is_front_page()) {
         $sliderImages[] = array('url' => $url, 'text' => '');
     }
 } else if (is_page()) {
-    $url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'original' );
+    $url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large_image' );
     $sliderImages[] = array('url' => $url[0], 'text' => '<h1 class="category-slide-title">' . get_the_title() . '</h1>');
 }
 
