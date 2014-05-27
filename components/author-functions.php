@@ -10,7 +10,7 @@ function display_author_group($atts) {
 	// if we're here, then start outputting the data
 	$output = "
 		<section class='people-group'>
-		<h2>" . $role_data["name"] . "</h2>
+		
 		
 		<ul class='author-grid'>";
 
