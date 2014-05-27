@@ -639,6 +639,23 @@ function add_custom_taxonomies() {
 			'has_archive' => false,
 		)
 	));
+
+
+	// add client list
+
+	register_taxonomy('clients', 'post', array(
+		// Hierarchical taxonomy (like categories)
+		'hierarchical' => false,
+		// This array of options controls the labels displayed in the WordPress Admin UI
+		'labels' => array(
+			'name' => _x( 'Our Clients', 'taxonomy general name' ),
+			'singular_name' => _x( 'Client', 'taxonomy singular name' ),
+			'menu_name' => __( 'Our Clients' ),
+			'has_archive' => false,
+		)
+	));
+
+
 }
 add_action( 'init', 'add_custom_taxonomies', 0 );
 
