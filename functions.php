@@ -642,7 +642,7 @@ function add_custom_taxonomies() {
 
 
 	// add client list
-
+	
 	register_taxonomy('clients', 'post', array(
 		// Hierarchical taxonomy (like categories)
 		'hierarchical' => false,
@@ -652,6 +652,8 @@ function add_custom_taxonomies() {
 			'singular_name' => _x( 'Client', 'taxonomy singular name' ),
 			'menu_name' => __( 'Our Clients' ),
 			'has_archive' => false,
+			'public' => false,
+			'rewrite' => false,
 		)
 	));
 
