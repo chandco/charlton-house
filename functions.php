@@ -702,4 +702,11 @@ function my_save_extra_profile_fields( $user_id ) {
        $initArray['verify_html'] = false;
        return $initArray;
 }
+
+
+
 add_filter('tiny_mce_before_init', 'mod_mce');
+
+
+
+include("components/author-functions.php");

@@ -110,56 +110,12 @@ if ($user): // we have a user in the URI, so let's get their information.  Other
 	<div class="author-index">
         <div class="container">
             <div class="author-index-summary">
-            	<?php while ( have_posts() ) : the_post(); the_content(); endwhile; ?>
-            	<?php
-            	//global $wp_roles;
-            	
-            	foreach ($wp_roles->roles as $role => $role_data) {
+            	<?php /*Show the page content */ 
+            	// you should ideally be using shortcodes here
+            	while ( have_posts() ) : the_post(); the_content(); endwhile; 
             		
-            		if (substr($role,0,3) == "ch_"): ?>
-            		<section class='people-group'>
-            		<h2><?= $role_data["name"]; ?></h2>
-					
-					<ul class='author-grid'>
-            		<?php
-            		// get the users in this group
-$args = array (
-'role' => $role
-);
-
-$users = get_users( $args );
-foreach ($users as $user):
-
-$user_info = get_userdata($user->ID); 
-
-if (get_cupp_meta($user->ID, 'thumbnail')) $url = get_cupp_meta($user->ID, 'thumbnail'); else $url = false;
-        
-
-?>
-
-<li>
-	<a href='<?php echo get_author_posts_url($user->ID); ?>'>
-		<div class='author-image'>
-			<?php if ($url) { ?><img src="<?= $url; ?>" alt='<?= $user->display_name; ?>' /><?php } ?>
-			<div class="overlay"><span class="read-more">Read More</span></div>
-		</div>
-		<h3><?= $user->display_name; ?></h3>
-		<?php echo get_the_author_meta( 'job-title', $user->ID ); ?>
-	</a>
-
-</li>
-
-
-
-<?php
-endforeach;
-
-				?>	</ul>
-					</section>
-
-            		<?php endif; // not a Ch_ role i..e not to be used
-            	}
-?>
+            	?>
+            	
 
 
 
