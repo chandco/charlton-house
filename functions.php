@@ -568,6 +568,7 @@ if( function_exists( 'add_image_size' ) ) {
 
     add_image_size( 'medium', 450, 283, true );
     add_image_size( 'large', 718, 459, true );
+     add_image_size( 'large-wide', 1436, 988, true );
 
 }
 
