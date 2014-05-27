@@ -256,7 +256,7 @@ function twentyfourteen_scripts() {
 		) );
 	}
 
-	wp_enqueue_script( 'ch-plugins-script', get_template_directory_uri() . '/js/plugins.js', array( 'jquery' ), '20140319', true );
+	wp_enqueue_script( 'ch-plugins-script', get_template_directory_uri() . '/js/min/plugins.min.js', array( 'jquery' ), '20140319', true );
 	
 	wp_enqueue_script( 'ch-main-script', get_template_directory_uri() . '/js/min/main.min.js', array( 'jquery', 'ch-plugins-script' ), '20140319', true );
 	
