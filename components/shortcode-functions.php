@@ -78,6 +78,8 @@ function display_clients($atts) {
         
      }
      $output .=  "</ul>";
+     
+     return $output;
 }
 add_shortcode("display_clients", "display_clients");
 
