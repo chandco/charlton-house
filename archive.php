@@ -75,7 +75,7 @@ $currentCat = get_category($cat);
 						endwhile;
 
 					else :
-					echo "meep";
+					
 						// If no content, include the "No posts found" template.
 						get_template_part( 'content', 'none' );
 

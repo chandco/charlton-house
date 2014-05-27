@@ -729,4 +729,4 @@ add_filter('tiny_mce_before_init', 'mod_mce');
 
 
 
-include("components/author-functions.php");
+include("components/shortcode-functions.php");
