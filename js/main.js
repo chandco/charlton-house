@@ -154,7 +154,6 @@ jQuery(document).ready(function($){
 
                 // news posts slider
                 if (s.newsSlider.length) {
-
                     s.newsSlider.flexslider({
                         animation: "slide",
                         easing : s.easeType,
@@ -167,10 +166,12 @@ jQuery(document).ready(function($){
                         itemMargin: 0,
                         prevText: "",
                         nextText: "",
+                        reverse: false,
                         start: function(){
                             // Vertical align News Slider nav
                             $('.newsslider a').css({'line-height': $('.newsslider').height()  + 'px'});
-                        }
+                           s.newsSlider.flexslider('prev');
+                             }
                     });
 
                     // change maxitems on resize
@@ -224,6 +225,7 @@ jQuery(document).ready(function($){
                         prevText: "",
                         nextText: ""
                     });
+
 
                     // change maxitems on resize
                     s.theWindow.resize(function() {
