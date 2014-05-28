@@ -64,21 +64,21 @@ function display_clients($atts) {
 	// we can expand this to include more people.
 
 
-	if ($atts['id']): // show a specific one
-		$args = array( 'slug' => $atts["id"] );
+	if (isset($atts['id'])): // show a specific one
+		$args = array( 'hide_empty'    => false,'slug' => $atts["id"] );
 	else: // show all
-		$args = array();
+		$args = array( 'hide_empty'    => false,);
 	endif;
 
 	$clients = get_terms( 'clients', $args );
-
-	$output =  "<ul>";
+	
+	$output =  "MY CLIENT LIST... <ul>";
      foreach ( $clients as $client ) {
        $output .= "<li>" . $client->name . "</li>";
         
      }
      $output .=  "</ul>";
-     
+
      return $output;
 }
 add_shortcode("display_clients", "display_clients");

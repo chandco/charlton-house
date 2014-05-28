@@ -335,4 +335,52 @@ jQuery(document).ready(function($){
         charlton.globalresize();
     }).trigger('resize');
 
+
+
+
+
+
+
+// load gallery scripts if there is a gallery.
+
+$('div.gallery').exists(function() {
+
+ 
+
+
+    $('div.gallery').magnificPopup({
+        type:'image', 
+        delegate: 'a', 
+        gallery:{
+            enabled:true
+            },// gallery:{
+        removalDelay: 300,
+        mainClass: 'mfp-fade'   
+            });
+   
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// end of jquery doc ready
 }); // doc ready

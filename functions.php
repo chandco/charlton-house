@@ -256,11 +256,19 @@ function twentyfourteen_scripts() {
 		) );
 	}
 
-	wp_enqueue_script( 'ch-plugins-script', get_template_directory_uri() . '/js/min/plugins.min.js', array( 'jquery' ), '20140319', true );
-	
-	wp_enqueue_script( 'ch-main-script', get_template_directory_uri() . '/js/min/main.min.js', array( 'jquery', 'ch-plugins-script' ), '20140319', true );
+	//wp_enqueue_script( 'ch-plugins-script', get_template_directory_uri() . '/js/min/plugins.min.js', array( 'jquery' ), '20140319', true );
+	//wp_enqueue_script( 'ch-main-script', get_template_directory_uri() . '/js/min/main.min.js', array( 'jquery', 'ch-plugins-script' ), '20140319', true );
 	
 
+	// DEV MODE:
+
+
+	wp_enqueue_script( 'ch-plugins-script', get_template_directory_uri() . '/js/plugins.js', array( 'jquery' ), '20140319', true );
+	//wp_enqueue_script( 'ch-popups', get_template_directory_uri() . '/js/vendor/magnific-popup.js', array( 'jquery' ), '20140319', true );
+	wp_enqueue_script( 'ch-main-script', get_template_directory_uri() . '/js/main.js', array( 'jquery', 'ch-plugins-script' ), '20140319', true );
+
+
+	wp_localize_script('ch-main-script', 'scriptdata', array ( 'assets' => get_template_directory_uri() ) );
 
 }
 add_action( 'wp_enqueue_scripts', 'twentyfourteen_scripts' );
@@ -728,5 +736,22 @@ function my_save_extra_profile_fields( $user_id ) {
 add_filter('tiny_mce_before_init', 'mod_mce');
 
 
+
+// smaller sizes for gallery links
+function oikos_get_attachment_link_filter( $content, $post_id, $size, $permalink ) {
+ 
+    // do this for all attachments
+    //if (! $permalink) {
+        // This returns an array of (url, width, height)
+        $image = wp_get_attachment_image_src( $post_id, 'large' );
+        $new_content = preg_replace('/href=\'(.*?)\'/', 'href=\'' . $image[0] . '\' data-fancybox-group=\'articlegallery\' rel=\'lightbox[gallery]\'', $content );
+        return $new_content;
+    //} else {
+		// change attachment page to 
+    //    return $content;
+    //}
+}
+ 
+add_filter('wp_get_attachment_link', 'oikos_get_attachment_link_filter', 10, 4);
 
 include("components/shortcode-functions.php");
