@@ -71,10 +71,34 @@ function display_clients($atts) {
 	endif;
 
 	$clients = get_terms( 'clients', $args );
+	/*
+	<figure class="gallery-item">
+			<div class="gallery-icon landscape">
+				<a href="http://localhost/wp-content/uploads/2014/05/Ruth092Before-the-Ceremony.jpg" data-fancybox-group="articlegallery" rel="lightbox[gallery]"><img width="293" height="180" src="http://localhost/wp-content/uploads/2014/05/Ruth092Before-the-Ceremony-293x180.jpg" class="attachment-thumbnail" alt="Ruth092{Before the Ceremony"></a>
+			</div></figure>
+	*/
 	
-	$output =  "MY CLIENT LIST... <ul>";
+
+	if (isset($atts["popup"])) $output =  "<ul class='clients-gallery popup'>";
+	else $output =  "<ul class='clients-gallery'>";
      foreach ( $clients as $client ) {
-       $output .= "<li>" . $client->name . "</li>";
+			/*
+				public 'term_id' => string '21' (length=2)
+				public 'name' => string 'not visa' (length=8)
+				public 'slug' => string 'something-else' (length=14)
+				public 'term_group' => string '0' (length=1)
+				public 'term_taxonomy_id' => string '33' (length=2)
+				public 'taxonomy' => string 'clients' (length=7)
+				public 'description' => string 'yea' (length=3)
+				public 'parent' => string '0' (length=1)
+				public 'count' => string '0' (length=1)
+			*/
+	 $client_img = get_field('client_logo', 'clients_' . $client->term_id);
+       $output .= "<li data-mfp-src='#client-" . $client->slug . "'>";
+       $output .= "<img src='" . $client_img['sizes']['thumbnail'] . "' />";
+       if (isset($atts["popup"])) $output .= "<div class='inline-modal  mfp-hide' id='client-" . $client->slug . "'><img src='" . $client_img['sizes']['medium'] . "' /><br />" . $client->description . "</div>";
+       $output .= "</li>";
+
         
      }
      $output .=  "</ul>";
