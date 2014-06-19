@@ -1,3 +1,13 @@
+jQuery(window).load(function($){
+    // Highlight menu on scroll
+    if ($('body.home').length) {
+        $('#charlton-navbar-collapse').visualNav({
+            selectedClass     : 'active',
+            contentClass       : 'home-section'
+        });
+    }
+});
+
 jQuery(document).ready(function($){
 
     var s,
@@ -75,13 +85,7 @@ jQuery(document).ready(function($){
                     checkScrollTopPos();
                 });
 
-                // Highlight menu on scroll
-                if ($('body.home').length) {
-                    $('#charlton-navbar-collapse').visualNav({
-                        selectedClass     : 'active',
-                        contentClass       : 'home-section'
-                    });
-                }
+                
                 
 
             },
