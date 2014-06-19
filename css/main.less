@@ -966,29 +966,31 @@ header {
         position: relative;
         height: 100%;
         .overlay {
-          opacity: 0;
+          opacity: 1;
           .transition(all 0.2s);
           position: absolute;
-          top: 0; left: 0;
+          bottom: 0; left: 0;
           width: 100%;
-          height: 90%;
-          padding: 5%;
+          height: 30%;
+          padding: 3%;
           color: @white;
+          background: rgba(0, 0, 0, 0.5);
           h3 {
-            font-size: 16px;
-            line-height: 24px;
+            font-size: 14px;
+            line-height: 15px;
             .avBlack();
             margin: 0 0 5px 0;
             text-transform: uppercase;
           }
           .date {
             .avRoman();
-            font-size: 14px;
+            font-size: 12px;
             display: block;
             text-transform: uppercase;
-			position:absolute;
-			top:44%;
-			left:5%;
+
+      			position:absolute;
+      			top:-365%;
+      			left:3%;
           }
         }
         &:hover img {
@@ -1082,8 +1084,15 @@ header {
   .newsslider {
     .slides li a {
       .overlay {
+
+        height:40%;
+
         h3 {
           line-height: 24px;
+        }
+
+        .date {
+          top: -250%;
         }
       }
     }
