@@ -1,7 +1,7 @@
 jQuery(window).load(function($){
     // Highlight menu on scroll
-    if ($('body.home').length) {
-        $('#charlton-navbar-collapse').visualNav({
+    if (jQuery('body.home').length) {
+        jQuery('#charlton-navbar-collapse').visualNav({
             selectedClass     : 'active',
             contentClass       : 'home-section'
         });
