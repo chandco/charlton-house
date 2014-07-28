@@ -7,8 +7,12 @@ if (is_front_page()) {
     $attachments = get_attachments_by_media_tags($args);
 
     foreach($attachments as $attachment) {
-        $sliderImages[] = array('url' => $attachment->guid, 'text' => '<h2>' . $attachment->post_excerpt . '</h2>');
+        $field = get_field('appearance_order', $attachment->ID, false);
+        $sliderImages[$field] = array('url' => $attachment->guid, 'text' => '<h2>' . $attachment->post_excerpt . '</h2>');
     }
+
+    ksort($sliderImages);
+
 
 } else if ($single_user_slider) {
      if (get_cupp_meta($single_user_slider, 'large-wide')) {
