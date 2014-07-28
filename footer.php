@@ -100,19 +100,19 @@
                                     <h1>EXECUTIVE TEAM</h1>
                                     <ul class="contacts-list">
                                         <li>
-                                            <a href="mailto:carline@charltonhouse.co.uk">
+                                            <a href="mailto:caroline.fry@charltonhouse.co.uk">
                                                 <span class="name">CAROLINE FRY</span><br />
                                                 <span class="email">EMAIL CAROLINE</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="mailto:paul@charltonhouse.co.uk" class="active">
+                                            <a href="mailto:paul.honey@charltonhouse.co.uk" class="active">
                                                 <span class="name">PAUL HONEY</span><br />
                                                 <span class="email">EMAIL PAUL</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="mailto:diane@charltonhouse.co.uk">
+                                            <a href="mailto:diane.rollinson@charltonhouse.co.uk">
                                                 <span class="name">DIANE ROLLINSON</span><br />
                                                 <span class="email">EMAIL DIANE</span>
                                             </a>
@@ -155,19 +155,19 @@
                                     <h1>EXECUTIVE TEAM</h1>
                                     <ul class="contacts-list">
                                         <li>
-                                            <a href="mailto:carline@charltonhouse.co.uk">
+                                            <a href="mailto:caroline.fry@charltonhouse.co.uk">
                                                 <span class="name">CAROLINE FRY</span><br />
                                                 <span class="email">EMAIL CAROLINE</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="mailto:paul@charltonhouse.co.uk">
+                                            <a href="mailto:paul.honey@charltonhouse.co.uk">
                                                 <span class="name">PAUL HONEY</span><br />
                                                 <span class="email">EMAIL PAUL</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="mailto:diane@charltonhouse.co.uk" class="active">
+                                            <a href="mailto:diane.rollinson@charltonhouse.co.uk" class="active">
                                                 <span class="name">DIANE ROLLINSON</span><br />
                                                 <span class="email">EMAIL DIANE</span>
                                             </a>
