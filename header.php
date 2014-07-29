@@ -24,7 +24,7 @@ $content_ids = apply_filters('set_content_ids', $default_content_ids);
     <title><?php wp_title( '|', true, 'right' ); ?></title>
     <link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-    <meta name="description" content="">
+   
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png" />
 
