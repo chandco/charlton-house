@@ -368,6 +368,14 @@ var popup = {
                 midClick: true
             },
 
+    under500cal : {
+        type:'inline', 
+        gallery : {
+            enabled:true
+            },// gallery:{
+        mainClass: 'mfp-fade',
+    }
+
 
 
 }
@@ -385,7 +393,9 @@ $('ul.clients-gallery.popup').exists(function() {
 
 
 
-
+$('.500cal-popups').exists(function() {
+    $(this).magnificPopup(popup.under500cal);
+})
 
 
 

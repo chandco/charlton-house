@@ -755,3 +755,5 @@ function oikos_get_attachment_link_filter( $content, $post_id, $size, $permalink
 add_filter('wp_get_attachment_link', 'oikos_get_attachment_link_filter', 10, 4);
 
 include("components/shortcode-functions.php");
+
+require_once("components/campaign-functions.php");
