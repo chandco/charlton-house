@@ -39,7 +39,7 @@
 @includeArrows:                  true; // include styles for nav arrows
 @controlsOpacity:                0.65;
 @controlsColor:                  #FFF;
-@innerCloseIconColor:            #333;
+@innerCloseIconColor:            #fff;
 @controlsTextColor:              #CCC; // Color of preloader and "1 of X" indicator
 @controlsTextColorHover:         #FFF;
 @IE7support:                     true; // Very basic IE7 support
@@ -340,11 +340,11 @@ button::-moz-focus-inner {
   }
 
   .mfp-arrow-left {
-    left: 0;
+    left: 10%;
 
     &:after,
     .mfp-a {
-      border-right: 17px solid #FFF;
+      border-right: 24px solid #FFF;
       margin-left: 31px;
     }
     &:before,
@@ -355,10 +355,10 @@ button::-moz-focus-inner {
   }
 
   .mfp-arrow-right {
-    right: 0;
+    right: 10%;
     &:after,
     .mfp-a {
-      border-left: 17px solid #FFF;
+      border-left: 24px solid #FFF;
       margin-left: 39px
     }
     &:before,

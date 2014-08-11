@@ -62,9 +62,14 @@ div.gallery, ul.clients-gallery {
 		padding-bottom: 0.5625 * 30%;
 		margin: 10px 0;
 
+		
 		&:nth-child(3n+2) {
 				margin: 10px 10px;
 			}
+
+
+
+
 
 		a {
 			display: block;
@@ -79,12 +84,14 @@ div.gallery, ul.clients-gallery {
 
 			img {
 				position: absolute;
-				width: 100%;
+				width: 101%;
 				height: auto;
 				transition: transform 0.3s ease, opacity 0.3s ease;
 				margin: 0;
 				top: 0;
 				left: 0;
+				backface-visibility: hidden;
+				max-width: 101%;
 			}
 	
 			h3 {
@@ -122,8 +129,25 @@ div.gallery, ul.clients-gallery {
 				}
 			}
 	
+
+
 			
-		}}
+		}
+
+		@media screen and (max-width: 600px ) {
+				width: 100%;
+				float: none;
+				padding-bottom: 56.25%;
+
+				&:nth-child(3n+2) {
+					margin: 10px 0px;
+				}
+
+				a h3 {
+					font-size: 24px;
+				}
+			}
+	}
 }
 
 
@@ -134,15 +158,16 @@ div.gallery, ul.clients-gallery {
 
 	padding: 10px;
 	img.mainpic {
-		width: 68%;
+		width: 60%;
 		height: auto;
 		display: block;
 		float: left;
 		border: 2px solid #fff;
+		margin-right: -2px;
 	}
 
 	.chef {
-		width: 30%;
+		width: 40%;
 		display: inline-block;
 		img {
 			width: 100%;
@@ -152,38 +177,54 @@ div.gallery, ul.clients-gallery {
 	}
 
 	.details {
-		width: 26%;
-		display: inline-block;
-		padding: 4%;
+		
+		border: 2px solid #fff;
+		width: 40%;
+		display: block;
+		position: relative;
+		float: left;
+		top: -2px;
 
 
 		h2 {
 			font-size: 1em;
-			margin: 5px 0;
-			position: absolute;
+			margin: 0;
 			z-index: 22;
-			left: 2px;
 			background: @red;
 			color: @white;
 			font-weight: bold;
 			text-transform: uppercase;
-			padding: 1%;
-			top: 30px;
-			max-width: 60%;
+			display: block;
+			width: 96%;
 			height: auto;
-			padding-left: 3%;
-
-			&:after {
-				content: "";
-				position: absolute;
-				left: 0;
-				bottom: -10px;
-				width: 0;
-				height: 0;
-				border-style: solid;
-				border-width: 0 10px 10px 0;
-				border-color: transparent #a10f29 transparent transparent;
+			padding: 2%;
+			width: auto;
+			em {
+				font-style: italic;
+				&:before {
+					content:" ";
+					margin-left: 10px;
+					display: inline-block;
+				}
 			}
+
+		} 
+
+		h3 {
+			font-size: 0.9em;
+			margin: 0;
+			display: block;
+			z-index: 22;
+			width: 100%;
+			background: @grey;
+			color: @white;
+			font-weight: bold;
+			text-transform: uppercase;
+			padding: 2%;
+			height: auto;
+
+
+			
 
 		}
 
@@ -192,6 +233,34 @@ div.gallery, ul.clients-gallery {
 		}
 	}
 
+
+	@media screen and (max-width: 600px ) {
+
+		width: 100%;
+		position: relative;
+		height: auto;
+		img.mainpic {
+			width: 100%;
+			position: relative
+		}
+
+		.chef {
+			width: 100%;
+			position: relative;
+		}
+
+		.details {
+			position: absolute;
+			top: auto;
+			bottom: 0;
+			z-index: 222;
+			width: 100%;
+			padding: 0;
+			left: 0;
+			right: 0;
+		}
+
+	}
 	
 }
 
@@ -200,7 +269,7 @@ div.gallery, ul.clients-gallery {
 
 .inline-modal {
 	background: @white;
-	width:600px;
+	width:100%;
 	padding: 20px;
 	max-width: 800px;
 	margin: auto;
@@ -218,13 +287,18 @@ div.gallery, ul.clients-gallery {
 	
 	width: 90%;
 	max-width: 900px;
-	position: fixed;
-	top: 10%;
+	top: 20%;
 	left: 0;
 	right: 0;
+	bottom: 10%;
 	margin:auto;
-	background: @white;
 	min-height: 300px;
 	max-height: 800px;
+
+	@media screen and (max-width: 600px ) {
+		top: 0;
+		bottom: 0;
+		max-width: 100%;
+	}
 }
 

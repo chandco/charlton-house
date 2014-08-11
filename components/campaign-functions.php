@@ -74,13 +74,16 @@ chefpic
 		// open the modal window
 		$output .= "<div id='chef-" . $count . "' class='mfp-hide white-popup under500cal_modal'>";
 
+
+		$separator = ' <i class="fa fa-circle red"></i> ';
 		// this is your content
 		$output .= "<img src='" . current($foodpic_l) . "' class='mainpic' />";
 
 		$output .= "<div class='chef'><img src='" . current($chefpic) . "' /></div>";
 		$output .= "<div class='details'>";
-		$output .= "<h2>" . $details["dish"] . "</h2>";
-		
+		$output .= "<h2>" . $details["dish"] . " <em>" . $details["calories"] . " cals </em></h2>";
+		$output .= "<h3>" . $details["name"] . "<Br />" . $details["brand"] . $separator . $details["unit"] . "</h3>";
+		/*
 		$output .= "<ul> 
 					<li>" . $details["brand"] . "</li>
 					<li>" . $details["unit"] . "</li>
@@ -89,7 +92,7 @@ chefpic
 					<li>" . $details["salt"] . "g salt</li>
 					<li>Main Ingredient: " . $details["mainingredient"] . "</li>
 					</ul>";
-		
+		*/
 		$output .= "</div>"; // div.details
 
 		// close the modal window
