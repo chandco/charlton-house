@@ -38,6 +38,8 @@
                                         SALES
                                     </h2>
                                     <p><a href="mailto:sales@charltonhouse.co.uk">sales@charltonhouse.co.uk</a></p>
+
+                                    <p><a href='http://careers.chandco.net/' class='external-link'><i class="fa fa-users"></i> CAREERS</a></p>
                                 </div>
                             </div>
                             <div class="col-sm-3">
@@ -93,6 +95,8 @@
                                         SALES
                                     </h2>
                                     <p><a href="mailto:sales@charltonhouse.co.uk">sales@charltonhouse.co.uk</a></p>
+
+                                    <p><a href='http://careers.chandco.net/' class='external-link'><i class="fa fa-users"></i> CAREERS</a></p>
                                 </div>
                             </div>
                             <div class="col-sm-3">
@@ -148,6 +152,8 @@
                                         SALES
                                     </h2>
                                     <p><a href="mailto:sales@charltonhouse.co.uk">sales@charltonhouse.co.uk</a></p>
+
+                                    <p><a href='http://careers.chandco.net/' class='external-link'><i class="fa fa-users"></i> CAREERS</a></p>
                                 </div>
                             </div>
                             <div class="col-sm-3">
