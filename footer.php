@@ -32,7 +32,7 @@
                                     <h2>
                                         MEDIA ENQUIRIES
                                     </h2>
-                                    <p>Epicurus 0207 420 4480</p>
+                                    <p>Epicurus: 07767 221548</p>
 
                                     <h2>
                                         SALES
