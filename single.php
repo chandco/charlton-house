@@ -17,45 +17,49 @@ get_header(); ?>
                 	<?php while ( have_posts() ) : the_post(); ?>
 
 	                    <h1 class="post-title"><?php the_title() ?></h1>
-	                    <?php	
-						$imageArgs = array(
-							'post_type' => 'attachment',
-							'post_mime_type' => 'image',
-							'numberposts' => null,
-							'post_status' => null,
-							'post_parent' => get_the_ID(),
-							'orderby' => 'menu_order'
-						);
-						$images = get_posts($imageArgs);
+	                    
+	                    <?php if (get_post_format() != 'video' ): ?>
+		                    <?php	
+							$imageArgs = array(
+								'post_type' => 'attachment',
+								'post_mime_type' => 'image',
+								'numberposts' => null,
+								'post_status' => null,
+								'post_parent' => get_the_ID(),
+								'orderby' => 'menu_order'
+							);
+							$images = get_posts($imageArgs);
 
-						$imagesArr = array();
-                    	if (get_post_thumbnail_id()) {
-                    		$imagesArr[get_post_thumbnail_id()] = get_post(get_post_thumbnail_id());
-                    	}
-                    	foreach($images as $image) { 
-                    		$imagesArr[$image->ID] = $image;
-                    	}
+							$imagesArr = array();
+	                    	if (get_post_thumbnail_id()) {
+	                    		$imagesArr[get_post_thumbnail_id()] = get_post(get_post_thumbnail_id());
+	                    	}
+	                    	foreach($images as $image) { 
+	                    		$imagesArr[$image->ID] = $image;
+	                    	}
 
-						if ($imagesArr) {
-                    	?>
-	                    <div class="single-gallery-slider">
-	                        <div class="flexslider singleslider">
-	                            <ul class="slides">
-	                            	<?php	
-	                            	foreach($imagesArr as $image) { 
-	                            		$img_src = wp_get_attachment_image_src( $image->ID, 'large');
-	                            		?>
-		                                <li>
-		                                    <span><img src="<?= $img_src[0] ?>" alt="" /></span>
-		                                    <?php if ($image->post_excerpt) { ?>
-		                                    	<p class="caption"><?= $image->post_excerpt ?></p>
-		                                    <?php } ?>
-		                                </li>
-	                                <?php } ?>
-	                            </ul>
-	                        </div>
-	                    </div>
-	                    <?php } ?>
+							if ($imagesArr) {
+	                    	?>
+		                    <div class="single-gallery-slider">
+		                        <div class="flexslider singleslider">
+		                            <ul class="slides">
+		                            	<?php	
+		                            	foreach($imagesArr as $image) { 
+		                            		$img_src = wp_get_attachment_image_src( $image->ID, 'large');
+		                            		?>
+			                                <li>
+			                                    <span><img src="<?= $img_src[0] ?>" alt="" /></span>
+			                                    <?php if ($image->post_excerpt) { ?>
+			                                    	<p class="caption"><?= $image->post_excerpt ?></p>
+			                                    <?php } ?>
+			                                </li>
+		                                <?php } ?>
+		                            </ul>
+		                        </div>
+		                    </div>
+		                    <?php } ?>
+
+	                	<?php endif; ?>
 
 	                    <?php the_content() ?>
 
