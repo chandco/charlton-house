@@ -757,3 +757,17 @@ add_filter('wp_get_attachment_link', 'oikos_get_attachment_link_filter', 10, 4);
 include("components/shortcode-functions.php");
 
 require_once("components/campaign-functions.php");
+
+
+// youtube videos
+function add_video_embed_note($return, $data, $url) {
+
+     /* Do nothing if an error occured while parsing */
+     if(!$return) return false;
+
+     
+
+     /* Return the result */
+     return "<div class='oembed'>" . $return . "</div>";
+}
+add_filter('oembed_dataparse', 'add_video_embed_note', 10, 3);
