@@ -74,6 +74,9 @@
                             <div class="col-sm-6">
                             </div>
                         </div>
+                        <div class='row'>
+                            <?php echo do_shortcode('[policy_links]' ); ?>
+                        </div>
                     </div><!-- end container -->
                 </li>
                 <li style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/paul-footerslide.jpg);" data-bgcolor="#BD910C">
@@ -131,6 +134,9 @@
                             <div class="col-sm-6">
                             </div>
                         </div>
+                        <div class='row'>
+                            <?php echo do_shortcode('[policy_links]' ); ?>
+                        </div>
                     </div><!-- end container -->
                 </li>
                 <li style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/diane-footerslide.jpg);" data-bgcolor="#1B1004">
@@ -187,6 +193,9 @@
                             </div>
                             <div class="col-sm-6">
                             </div>
+                        </div>
+                        <div class='row'>
+                            <?php echo do_shortcode('[policy_links]' ); ?>
                         </div>
                     </div><!-- end container -->
                 </li>
