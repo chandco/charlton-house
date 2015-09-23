@@ -7,9 +7,9 @@
 
 // Set content IDs to be used throughout Theme
 $default_content_ids = array(
-                        'cat_fresh_ideas' => 3,
+                        'cat_fresh_ideas' => 23,
                         'cat_news' => 1,
-                        'cat_csr' => 10,
+                        'cat_csr' => 24,
                         'page_about_us' => 2);
 global $content_ids;
 $content_ids = apply_filters('set_content_ids', $default_content_ids);
